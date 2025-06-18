@@ -1,0 +1,55 @@
+def inicio():
+    print("Bienvenido a 'El mal del presente'")
+    print("Estás en un laboratorio donde están probando una máquina del tiempo.")
+    print("De repente, todo se vuelve borroso y... ¡viajas al futuro!")
+    print("El mundo está en ruinas. Frente a ti ves una extraña criatura mutante hecha de materiales de laboratorio y radiación de uranio.")
+    primera_decision()
+
+def primera_decision():
+    print("\n¿Qué quieres hacer?")
+    print("1. Buscar una salida del laboratorio")
+    eleccion = input("Elige 1 o 2: ")
+
+    if eleccion == "1":
+        criatura()
+    elif eleccion == "2":
+        salida()
+    else:
+        print("Opción no válida.")
+        primera_decision()
+
+def criatura():
+    print("\nLa criatura te observa. Parece hostil.")
+    print("¿Qué haces?")
+    print("1. Intentar comunicarte")
+    print("2. Correr y esconderte")
+    eleccion = input("Elige 1 o 2: ")
+
+    if eleccion == "1":
+        print("\nLa criatura no entiende y ataca. ¡Has perdido!")
+    elif eleccion == "2":
+        print("\nTe escondes volver al pasado.")
+        regreso_al_pasado()
+    else:
+        print("Opción no válida.")
+        criatura()
+
+def salida():
+    print("\nEncuentras la puerta bloqueada con escombros.")
+    print("¿Qué haces?")
+    print("1. Buscar herramientas para despejar la puerta")
+    print("2. Regresar y enfrentarte a la criatura")
+    eleccion = input("Elige 1 o 2: ")
+
+    if eleccion == "1":
+        print("\nCon esfuerzo, logras abrir un pequeño hueco y escapas al exterior... ¡donde el mundo está aún más devastado!")
+        regreso_al_pasado()
+    elif eleccion == "2":
+        criatura()
+    else:
+        print("Opción no válida.")
+        salida.")
+        viaje_final()
+
+if __name__ == "__main__":
+    inicio()
