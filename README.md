@@ -69,3 +69,48 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
+
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Networking;
+using UnityEngine.UI;
+
+public class RandomJokeGenerator : MonoBehaviour
+{
+    // Assign this in the Unity Inspector to a UI Text component to display the joke
+    public Text jokeText;
+
+    // Example external joke API (Official Joke API)
+    private string apiUrl = "https://official-joke-api.appspot.com/random_joke";
+
+    // Call this method to fetch a joke (e.g., from a button OnClick)
+    public void GetRandomJoke()
+    {
+        StartCoroutine(FetchJokeCoroutine());
+    }
+
+    private IEnumerator FetchJokeCoroutine()
+    {
+        UnityWebRequest request = UnityWebRequest.Get(apiUrl);
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.Success)
+        {
+            // Parse the joke from the JSON response
+            JokeResponse joke = JsonUtility.FromJson<JokeResponse>(request.downloadHandler.text);
+            jokeText.text = $"{joke.setup}\n{joke.punchline}";
+        }
+        else
+        {
+            jokeText.text = "Failed to load joke. Please try again!";
+        }
+    }
+
+    // Match the JSON structure from the API
+    [System.Serializable]
+    private class JokeResponse
+    {
+        public string setup;
+        public string punchline;
+    }
+}
