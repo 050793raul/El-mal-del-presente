@@ -1,0 +1,22 @@
+/El-mal-del-presente
+│
+├── Assets/                  # Carpeta principal de Unity
+│   ├── Art/                 # Ilustraciones, sprites, modelos 3D, etc.
+│   ├── Audio/               # Música, efectos de sonido
+│   ├── Scenes/              # Escenas de Unity, por ejemplo: MainMenu.unity
+│   ├── Scripts/             # Código fuente en C#
+│   ├── Prefabs/             # Prefabricados de Unity (objetos reutilizables)
+│   ├── UI/                  # Elementos de interfaz de usuario
+│   └── Materials/           # Materiales y shaders
+│
+├── Docs/                    # Documentación, diseño de juego, guías
+│
+├── Design/                  # Documentos de diseño, narrativa, mecánicas
+│
+├── Prototipo/               # Prototipos jugables, pruebas rápidas
+│
+├── README.md                # Descripción general del proyecto
+│
+├── .gitignore               # Archivos y carpetas que no se suben al repositorio
+│
+└── ProjectSettings/         # Configuración del proyecto de Unity
