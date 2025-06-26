@@ -1,1 +1,27 @@
 Estructura del juego
+
+El-mal-del-presente/
+│
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── CODE_OF_CONDUCT.md
+│
+├── Assets/
+├── ProjectSettings/
+├── Packages/
+│
+├── Docs/
+│   └── historia.md
+│
+├── Examples/
+│   └── MovimientoBasico.cs
+│   └── README.md
+│
+├── Scripts/
+│
+├── .gitignore
+├── README.md
+├── CONTRIBUTING.md
+├── LICENSE
+└── CHANGELOG.md
