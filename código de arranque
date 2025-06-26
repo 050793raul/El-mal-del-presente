@@ -1,3 +1,23 @@
+using UnityEngine;
+
+public class MovimientoJugador : MonoBehaviour
+{
+    public float velocidad = 5f;
+
+    private Rigidbody2D rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        float movimientoX = Input.GetAxis("Horizontal");
+        float movimientoY = Input.GetAxis("Vertical");
+        rb.velocity = new Vector2(movimientoX, movimientoY) * velocidad;
+    }
+}
 def inicio():
     print("Bienvenido a 'El mal del presente'")
     print("Estás en un laboratorio donde están probando una máquina del tiempo.")
