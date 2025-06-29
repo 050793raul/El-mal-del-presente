@@ -1,0 +1,43 @@
+using UnityEngine;
+using UnityEngine.Networking;
+using System.Collections;
+
+public class NetworkManager : MonoBehaviour
+{
+    public string serverUrl = "https://tuservidor.com/api/";
+
+    void Start()
+    {
+        StartCoroutine(ConnectToServer());
+    }
+
+    IEnumerator ConnectToServer()
+    {
+        UnityWebRequest request = UnityWebRequest.Get(serverUrl + "connect");
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.Success)
+        {
+            Debug.Log("Conectado al servidor: " + request.downloadHandler.text);
+            // Puedes guardar el token de sesión aquí si el servidor lo devuelve
+        }
+        else
+        {
+            Debug.LogError("Error de conexión, reintentando...");
+            // Intentar reconectar después de unos segundos
+            yield return new WaitForSeconds(5);
+            StartCoroutine(ConnectToServer());
+        }
+    }
+
+    public IEnumerator SendMessageToServer(string message)
+    {
+        UnityWebRequest request = UnityWebRequest.Post(serverUrl + "mensaje", message);
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.Success)
+            Debug.Log("Mensaje enviado correctamente");
+        else
+            Debug.LogError("Error al enviar mensaje");
+    }
+}
