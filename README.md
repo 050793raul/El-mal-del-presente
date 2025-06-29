@@ -1,1 +1,3 @@
 Se necesitan colaboradores para este gran proyecto serían parte de el ya una vez creado estarían dentro del equipo y todos los que participen tendrán su compensación espero que puedan ayudar a hacer realidad este juego y se pueda sacar al público se les agradece a todos por su gran esfuerzo y apoyo 
+
+les cuento que si alguien se decide a colaborar en la construcción y desarrollo se le va a pagar pero necesitamos que entregue el trabajo ya terminado y listo para juntarlo con todo el equipo y si alguien quiere ser mantenedor también se aceptan nos ponemos de acuerdo y nos arreglamos en el precio bueno espero que si se pueda hacer este juego vamos amigos espero su apoyo
